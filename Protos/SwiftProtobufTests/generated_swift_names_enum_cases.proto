@@ -868,8 +868,8 @@ enum GeneratedSwiftReservedEnum {
   subVisitor = 861;
   Swift = 862;
   swiftPrefix = 863;
-  SwiftProtobufContiguousBytes = 864;
-  SwiftProtobufError = 865;
+  AppleSwiftProtobufContiguousBytes = 864;
+  AppleSwiftProtobufError = 865;
   syntax = 866;
   T = 867;
   tag = 868;

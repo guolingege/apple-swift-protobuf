@@ -8,7 +8,7 @@
 
 import Foundation
 import FuzzCommon
-import SwiftProtobuf
+import AppleSwiftProtobuf
 
 @_cdecl("LLVMFuzzerTestOneInput")
 public func FuzzJSON(_ start: UnsafeRawPointer, _ count: Int) -> CInt {

@@ -13,13 +13,13 @@
 ///
 // -----------------------------------------------------------------------------
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 class MessageFieldGenerator: FieldGeneratorBase, FieldGenerator {
     private let generatorOptions: GeneratorOptions
     private let usesHeapStorage: Bool
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
 
     private let hasFieldPresence: Bool
     private let swiftName: String
@@ -50,7 +50,7 @@ class MessageFieldGenerator: FieldGeneratorBase, FieldGenerator {
     init(
         descriptor: FieldDescriptor,
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer,
+        namer: AppleSwiftProtobufNamer,
         usesHeapStorage: Bool
     ) {
         precondition(descriptor.realContainingOneof == nil)

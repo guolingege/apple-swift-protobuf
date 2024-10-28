@@ -8,7 +8,7 @@
 
 import Foundation
 import FuzzCommon
-import SwiftProtobuf
+import AppleSwiftProtobuf
 
 private func asyncByteStream(bytes: UnsafeRawBufferPointer) -> AsyncStream<UInt8> {
     AsyncStream(UInt8.self) { continuation in

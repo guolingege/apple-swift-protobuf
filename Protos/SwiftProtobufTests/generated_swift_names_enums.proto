@@ -867,8 +867,8 @@ message GeneratedSwiftReservedEnums {
   enum subVisitor { NONE_subVisitor = 0; }
   enum Swift { NONE_Swift = 0; }
   enum swiftPrefix { NONE_swiftPrefix = 0; }
-  enum SwiftProtobufContiguousBytes { NONE_SwiftProtobufContiguousBytes = 0; }
-  enum SwiftProtobufError { NONE_SwiftProtobufError = 0; }
+  enum AppleSwiftProtobufContiguousBytes { NONE_AppleSwiftProtobufContiguousBytes = 0; }
+  enum AppleSwiftProtobufError { NONE_AppleSwiftProtobufError = 0; }
   enum syntax { NONE_syntax = 0; }
   enum T { NONE_T = 0; }
   enum tag { NONE_tag = 0; }

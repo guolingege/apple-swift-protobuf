@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SwiftProtobuf/Performance/generators/cpp.sh - C++ test harness generator
+# AppleSwiftProtobuf/Performance/generators/cpp.sh - C++ test harness generator
 #
 # This source file is part of the Swift.org open source project
 #
@@ -280,7 +280,7 @@ EOF
   *(message.mutable_optionalgroup()->mutable_optional_group_message()) = snapshot;
 EOF
 fi
-  
+
   cat >>"$gen_harness_path" <<EOF
   for (auto i = 0; i < repeated_count; i++) {
     auto element = message.add_repeated_message();

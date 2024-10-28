@@ -1,4 +1,4 @@
-// Protos/SwiftProtobufPluginLibraryTests/pluginlib_descriptor_test_import.proto - test proto
+// Protos/AppleSwiftProtobufPluginLibraryTests/pluginlib_descriptor_test_import.proto - test proto
 //
 // This source file is part of the Swift.org open source project
 //
@@ -10,7 +10,7 @@
 //
 // -----------------------------------------------------------------------------
 ///
-/// Test proto for Tests/SwiftProtobufPluginLibraryTests/Test_Descriptor.swift
+/// Test proto for Tests/AppleSwiftProtobufPluginLibraryTests/Test_Descriptor.swift
 ///
 // -----------------------------------------------------------------------------
 

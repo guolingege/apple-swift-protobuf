@@ -114,7 +114,7 @@ The possible values for `FileNaming` are:
 
 ##### Generation Option: `Visibility` - Visibility of Generated Types
 
-By default, SwiftProtobuf does not specify a visibility for the
+By default, AppleSwiftProtobuf does not specify a visibility for the
 generated types, methods, and properties.  As a result, these will end
 up with the default (`internal`) access.  You can change this with the
 `Visibility` option:
@@ -146,7 +146,7 @@ $ protoc --swift_opt=ProtoPathModuleMappings=[path.asciipb] --swift_out=. foo/ba
 ```
 
 The format of that mapping file is defined in
-[swift_protobuf_module_mappings.proto](../Protos/SwiftProtobufPluginLibrary/swift_protobuf_module_mappings.proto),
+[swift_protobuf_module_mappings.proto](../Protos/AppleSwiftProtobufPluginLibrary/swift_protobuf_module_mappings.proto),
 and files would look something like:
 
 ```
@@ -168,8 +168,8 @@ The `proto_file_path` values here should match the paths used in the proto file
 ##### Generation Option: `ImplementationOnlyImports` - `@_implementationOnly`-annotated imports
 
 By default, the code generator does not annotate any imports with `@_implementationOnly`.
-However, in some scenarios, such as when distributing an `XCFramework`, imports 
-for types used only internally should be annotated as `@_implementationOnly` to 
+However, in some scenarios, such as when distributing an `XCFramework`, imports
+for types used only internally should be annotated as `@_implementationOnly` to
 avoid exposing internal symbols to clients.
 You can change this with the `ImplementationOnlyImports` option:
 
@@ -181,17 +181,17 @@ The possible values for `ImplementationOnlyImports` are:
 
 * `false` (default): The `@_implementationOnly` annotation will never be used.
 * `true`: Imports of internal dependencies and any modules defined in the module
-mappings will be annotated as `@_implementationOnly`. 
+mappings will be annotated as `@_implementationOnly`.
 
-**Important:** Modules cannot be imported as implementation-only if they're 
+**Important:** Modules cannot be imported as implementation-only if they're
 exposed via public API, so even if `ImplementationOnlyImports` is set to `true`,
-this will only work if the `Visibility` is set to `internal`. 
+this will only work if the `Visibility` is set to `internal`.
 
 
 ##### Generation Option: `UseAccessLevelOnImports` - imports preceded by a visibility modifier (`public`, `package`, `internal`)
 
-The default behavior depends on the Swift version the plugin is compiled with. 
-For Swift versions below 6.0 the default is `false` and the code generator does not precede any imports with a visibility modifier. 
+The default behavior depends on the Swift version the plugin is compiled with.
+For Swift versions below 6.0 the default is `false` and the code generator does not precede any imports with a visibility modifier.
 You can change this by explicitly setting the `UseAccessLevelOnImports` option:
 
 ```
@@ -202,17 +202,17 @@ The possible values for `UseAccessLevelOnImports` are:
 
 * `false`: Generates plain import directives without a visibility modifier.
 * `true`: Imports of internal dependencies and any modules defined in the module
-mappings will be preceded by a visibility modifier corresponding to the visibility of the generated types - see `Visibility` option. 
+mappings will be preceded by a visibility modifier corresponding to the visibility of the generated types - see `Visibility` option.
 
-**Important:** It is strongly encouraged to use `internal` imports instead of `@_implementationOnly` imports. 
-Hence `UseAccessLevelOnImports` and `ImplementationOnlyImports` options exclude each other. 
+**Important:** It is strongly encouraged to use `internal` imports instead of `@_implementationOnly` imports.
+Hence `UseAccessLevelOnImports` and `ImplementationOnlyImports` options exclude each other.
 
 
 ### Building your project
 
 After copying the `.pb.swift` files into your project, you will need
 to add the
-[SwiftProtobuf library](https://github.com/apple/swift-protobuf) to
+[AppleSwiftProtobuf library](https://github.com/apple/swift-protobuf) to
 your project to support the generated code.  If you are using the
 Swift Package Manager, you should first check what version of
 `protoc-gen-swift` you are currently using:
@@ -228,7 +228,7 @@ above:
 
 ```swift
 dependencies: [
-    .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.6.0"),
+    .package(name: "AppleSwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.6.0"),
 ]
 ```
 
@@ -254,9 +254,9 @@ produce one or more source code files
 that `protoc` will then save to the correct output location.
 
 The `protoc-gen-swift` program relies heavily
-on the `SwiftProtobuf` library to handle serializing and
+on the `AppleSwiftProtobuf` library to handle serializing and
 deserializing the protobuf-encoded data used to
 communicate with `protoc`.
-It also relies on another library called `SwiftProtobufPluginLibrary`
+It also relies on another library called `AppleSwiftProtobufPluginLibrary`
 that incorporates a lot of the key knowledge about how
 to produce Swift source code.

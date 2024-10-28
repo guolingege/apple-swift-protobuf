@@ -1,4 +1,4 @@
-// Tests/SwiftProtobufPluginLibraryTests/Test_SwiftProtobufNamer.swift - Test SwiftProtobufNamer.swift
+// Tests/AppleSwiftProtobufPluginLibraryTests/Test_AppleSwiftProtobufNamer.swift - Test AppleSwiftProtobufNamer.swift
 //
 // Copyright (c) 2014 - 2017 Apple Inc. and the project authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
@@ -8,14 +8,14 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
-import SwiftProtobufTestHelpers
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
+import AppleSwiftProtobufTestHelpers
 import XCTest
 
 @testable import protoc_gen_swift
 
-final class Test_SwiftProtobufNamer: XCTestCase {
+final class Test_AppleSwiftProtobufNamer: XCTestCase {
 
     func testEnumValueHandling_AliasNameMatches() throws {
         let txt = [
@@ -63,7 +63,7 @@ final class Test_SwiftProtobufNamer: XCTestCase {
 
         let descriptorSet = DescriptorSet(protos: [fileProto])
         let namer =
-            SwiftProtobufNamer(
+            AppleSwiftProtobufNamer(
                 currentFile: descriptorSet.fileDescriptor(named: "test.proto")!,
                 protoFileToModuleMappings: ProtoFileToModuleMappings()
             )
@@ -121,7 +121,7 @@ final class Test_SwiftProtobufNamer: XCTestCase {
 
         let descriptorSet = DescriptorSet(protos: [fileProto])
         let namer =
-            SwiftProtobufNamer(
+            AppleSwiftProtobufNamer(
                 currentFile: descriptorSet.fileDescriptor(named: "test.proto")!,
                 protoFileToModuleMappings: ProtoFileToModuleMappings()
             )
@@ -200,7 +200,7 @@ final class Test_SwiftProtobufNamer: XCTestCase {
 
         let descriptorSet = DescriptorSet(protos: [fileProto])
         let namer =
-            SwiftProtobufNamer(
+            AppleSwiftProtobufNamer(
                 currentFile: descriptorSet.fileDescriptor(named: "test.proto")!,
                 protoFileToModuleMappings: ProtoFileToModuleMappings()
             )
@@ -278,7 +278,7 @@ final class Test_SwiftProtobufNamer: XCTestCase {
 
         let descriptorSet = DescriptorSet(protos: [fileProto])
         let namer =
-            SwiftProtobufNamer(
+            AppleSwiftProtobufNamer(
                 currentFile: descriptorSet.fileDescriptor(named: "test.proto")!,
                 protoFileToModuleMappings: ProtoFileToModuleMappings()
             )

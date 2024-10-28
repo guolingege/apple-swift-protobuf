@@ -175,7 +175,7 @@ jobs:
         set -eu
         # Trim out the generate files that are just compile tests, they take a while to compile and
         # are covered in core instead.
-        rm Tests/SwiftProtobufTests/generated_swift_names*
+        rm Tests/AppleSwiftProtobufTests/generated_swift_names*
         # On linux, the tests seem to always see leaks that don't show up on macOS. Disable the
         # leak detection and just assume it is a Linux Swift issue. This still gets validation
         # for other memory errors. Maybe https://bugs.swift.org/browse/SR-6848.

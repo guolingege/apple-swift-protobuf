@@ -15,7 +15,7 @@ Please be sure to include:
 * what version of Swift is your code set to compile with (i.e. from project
   settings, etc.)
 
-* what branch/tag of SwiftProtobuf you are using (1.0.0, etc.)
+* what branch/tag of AppleSwiftProtobuf you are using (1.0.0, etc.)
 
 * if you are getting compile errors, please be sure include all errors/warnings,
   sometimes the error before the one you are stuck on is important.

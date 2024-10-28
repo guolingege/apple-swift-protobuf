@@ -8,8 +8,8 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 import XCTest
 
 @testable import protoc_gen_swift
@@ -207,7 +207,7 @@ final class Test_DescriptorExtensions: XCTestCase {
               mapping { module_name: "foo", proto_file_path: "file5" }
             """
 
-        let config = try! SwiftProtobuf_GenSwift_ModuleMappings(textFormatString: configText)
+        let config = try! AppleSwiftProtobuf_GenSwift_ModuleMappings(textFormatString: configText)
         let mapper = try! ProtoFileToModuleMappings(moduleMappingsProto: config)
 
         let fileProtos = [
@@ -306,7 +306,7 @@ final class Test_DescriptorExtensions: XCTestCase {
               mapping { module_name: "ImportsImportsAPublicly", proto_file_path: "imports_imports_a_publicly.proto" }
             """
 
-        let config = try! SwiftProtobuf_GenSwift_ModuleMappings(textFormatString: configText)
+        let config = try! AppleSwiftProtobuf_GenSwift_ModuleMappings(textFormatString: configText)
         let mapper = try! ProtoFileToModuleMappings(moduleMappingsProto: config)
 
         let fileProtos = [
@@ -505,7 +505,7 @@ extension FileDescriptor {
         directive: GeneratorOptions.ImportDirective,
         reexport: Bool = false
     ) -> String {
-        let namer = SwiftProtobufNamer(
+        let namer = AppleSwiftProtobufNamer(
             currentFile: self,
             protoFileToModuleMappings: mappings
         )

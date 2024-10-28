@@ -13,8 +13,8 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 /// The name of the case used to represent unrecognized values in proto3.
 /// This case has an associated value containing the raw integer value.
@@ -27,7 +27,7 @@ class EnumGenerator {
 
     private let enumDescriptor: EnumDescriptor
     private let generatorOptions: GeneratorOptions
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
 
     /// The aliasInfo for the values.
     private let aliasInfo: EnumDescriptor.ValueAliasInfo
@@ -40,7 +40,7 @@ class EnumGenerator {
     init(
         descriptor: EnumDescriptor,
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer
+        namer: AppleSwiftProtobufNamer
     ) {
         self.enumDescriptor = descriptor
         self.generatorOptions = generatorOptions

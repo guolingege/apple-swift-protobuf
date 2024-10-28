@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SwiftProtobuf/Performance/runners/swift.sh - Swift test harness runner
+# AppleSwiftProtobuf/Performance/runners/swift.sh - Swift test harness runner
 #
 # This source file is part of the Swift.org open source project
 #
@@ -49,18 +49,18 @@ function run_swift_harness() {
     # Build the dynamic library to use in the tests.
     # TODO: Make the dylib a product again in the package manifest and just use
     # that.
-    echo "Building SwiftProtobuf dynamic library..."
+    echo "Building AppleSwiftProtobuf dynamic library..."
     ${XCRUN} "${SWIFTC}" -emit-library -emit-module -O -wmo \
-        -o "$perf_dir/_generated/libSwiftProtobuf.dylib" \
+        -o "$perf_dir/_generated/libAppleSwiftProtobuf.dylib" \
         ${OTHER_SWIFT_FLAGS:-} \
-        "$perf_dir/../Sources/SwiftProtobuf/"*.swift
+        "$perf_dir/../Sources/AppleSwiftProtobuf/"*.swift
 
     echo "Building Swift test harness..."
     time ( ${XCRUN} "${SWIFTC}" -O \
         -o "$harness" \
         -I "$perf_dir/_generated" \
         -L "$perf_dir/_generated" \
-        -lSwiftProtobuf \
+        -lAppleSwiftProtobuf \
         ${OTHER_SWIFT_FLAGS:-} \
         "$gen_harness_path" \
         "$perf_dir/Harness.swift" \
@@ -69,7 +69,7 @@ function run_swift_harness() {
     )
     echo
 
-    dylib="$perf_dir/_generated/libSwiftProtobuf.dylib"
+    dylib="$perf_dir/_generated/libAppleSwiftProtobuf.dylib"
     echo "Swift dylib size before stripping: $(stat -f "%z" "$dylib") bytes"
     cp "$dylib" "${dylib}_stripped"
     strip -u -r "${dylib}_stripped"

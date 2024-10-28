@@ -15,13 +15,13 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 class MessageGenerator {
     private let descriptor: Descriptor
     private let generatorOptions: GeneratorOptions
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
     private let visibility: String
     private let swiftFullName: String
     private let swiftRelativeName: String
@@ -36,7 +36,7 @@ class MessageGenerator {
     init(
         descriptor: Descriptor,
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer,
+        namer: AppleSwiftProtobufNamer,
         extensionSet: ExtensionSetGenerator
     ) {
         self.descriptor = descriptor
@@ -146,7 +146,7 @@ class MessageGenerator {
             p.print(
                 """
                 // \(namer.swiftProtobufModuleName).Message conformance is added in an extension below. See the
-                // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+                // `Message` and `Message+*Additions` files in the AppleSwiftProtobuf library for
                 // methods supported on all messages.
                 """
             )
@@ -560,13 +560,13 @@ class MessageGenerator {
 
 private struct MessageFieldFactory {
     private let generatorOptions: GeneratorOptions
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
     private let useHeapStorage: Bool
     private let oneofs: [OneofGenerator]
 
     init(
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer,
+        namer: AppleSwiftProtobufNamer,
         useHeapStorage: Bool,
         oneofGenerators: [OneofGenerator]
     ) {

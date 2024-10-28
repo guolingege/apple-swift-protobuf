@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SwiftProtobuf/Performance/runners/cpp.sh - C++ test harness runner
+# AppleSwiftProtobuf/Performance/runners/cpp.sh - C++ test harness runner
 #
 # This source file is part of the Swift.org open source project
 #

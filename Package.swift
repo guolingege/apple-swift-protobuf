@@ -12,74 +12,74 @@
 import PackageDescription
 
 let package = Package(
-    name: "SwiftProtobuf",
+    name: "AppleSwiftProtobuf",
     products: [
         .executable(
             name: "protoc-gen-swift",
             targets: ["protoc-gen-swift"]
         ),
         .library(
-            name: "SwiftProtobuf",
-            targets: ["SwiftProtobuf"]
+            name: "AppleSwiftProtobuf",
+            targets: ["AppleSwiftProtobuf"]
         ),
         .library(
-            name: "SwiftProtobufPluginLibrary",
-            targets: ["SwiftProtobufPluginLibrary"]
+            name: "AppleSwiftProtobufPluginLibrary",
+            targets: ["AppleSwiftProtobufPluginLibrary"]
         ),
         .plugin(
-            name: "SwiftProtobufPlugin",
-            targets: ["SwiftProtobufPlugin"]
+            name: "AppleSwiftProtobufPlugin",
+            targets: ["AppleSwiftProtobufPlugin"]
         ),
     ],
     targets: [
         .target(
-            name: "SwiftProtobuf",
+            name: "AppleSwiftProtobuf",
             exclude: ["CMakeLists.txt"],
             resources: [.copy("PrivacyInfo.xcprivacy")],
             swiftSettings: .packageSettings
         ),
         .target(
-            name: "SwiftProtobufPluginLibrary",
-            dependencies: ["SwiftProtobuf"],
+            name: "AppleSwiftProtobufPluginLibrary",
+            dependencies: ["AppleSwiftProtobuf"],
             exclude: ["CMakeLists.txt"],
             resources: [.copy("PrivacyInfo.xcprivacy")],
             swiftSettings: .packageSettings
         ),
         .target(
-            name: "SwiftProtobufTestHelpers",
-            dependencies: ["SwiftProtobuf"],
+            name: "AppleSwiftProtobufTestHelpers",
+            dependencies: ["AppleSwiftProtobuf"],
             swiftSettings: .packageSettings
         ),
         .executableTarget(
             name: "protoc-gen-swift",
-            dependencies: ["SwiftProtobufPluginLibrary", "SwiftProtobuf"],
+            dependencies: ["AppleSwiftProtobufPluginLibrary", "AppleSwiftProtobuf"],
             exclude: ["CMakeLists.txt"],
             swiftSettings: .packageSettings
         ),
         .executableTarget(
             name: "Conformance",
-            dependencies: ["SwiftProtobuf"],
+            dependencies: ["AppleSwiftProtobuf"],
             exclude: ["failure_list_swift.txt", "text_format_failure_list_swift.txt"],
             swiftSettings: .packageSettings
         ),
         .plugin(
-            name: "SwiftProtobufPlugin",
+            name: "AppleSwiftProtobufPlugin",
             capability: .buildTool(),
             dependencies: ["protoc-gen-swift"]
         ),
         .testTarget(
-            name: "SwiftProtobufTests",
-            dependencies: ["SwiftProtobuf"],
+            name: "AppleSwiftProtobufTests",
+            dependencies: ["AppleSwiftProtobuf"],
             swiftSettings: .packageSettings
         ),
         .testTarget(
-            name: "SwiftProtobufPluginLibraryTests",
-            dependencies: ["SwiftProtobufPluginLibrary", "SwiftProtobufTestHelpers"],
+            name: "AppleSwiftProtobufPluginLibraryTests",
+            dependencies: ["AppleSwiftProtobufPluginLibrary", "AppleSwiftProtobufTestHelpers"],
             swiftSettings: .packageSettings
         ),
         .testTarget(
             name: "protoc-gen-swiftTests",
-            dependencies: ["protoc-gen-swift", "SwiftProtobufTestHelpers"],
+            dependencies: ["protoc-gen-swift", "AppleSwiftProtobufTestHelpers"],
             swiftSettings: .packageSettings
         ),
     ],

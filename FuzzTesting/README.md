@@ -35,7 +35,7 @@ When issues are found:
 1. Make sure you add a file to `FailCases` subdirectory so regressions can
    easily be watched for. The GitHub workflow runs against there.
 
-2. Consider adding them to `Tests/SwiftProtobufTests/Test_FuzzTests.swift`, this
+2. Consider adding them to `Tests/AppleSwiftProtobufTests/Test_FuzzTests.swift`, this
    help in debugging while working on the failure, but also provides yet another way
    to ensure things don't regress and if they do, it is much easier to immediately
    debug the issue.

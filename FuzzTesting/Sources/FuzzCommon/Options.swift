@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
+import AppleSwiftProtobuf
 
 public enum FuzzOption<T: SupportsFuzzOptions> {
     case boolean(WritableKeyPath<T, Bool>)

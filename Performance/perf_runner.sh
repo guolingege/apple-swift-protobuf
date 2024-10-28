@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SwiftProtobuf/Performance/perf_runner.swift - Performance test runner
+# AppleSwiftProtobuf/Performance/perf_runner.swift - Performance test runner
 #
 # This source file is part of the Swift.org open source project
 #

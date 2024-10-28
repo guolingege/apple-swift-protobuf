@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobufPluginLibrary
 
 extension ProvidesDeprecationComment where Self: ProvidesSourceCodeLocation {
     func protoSourceCommentsWithDeprecation(

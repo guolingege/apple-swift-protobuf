@@ -1,4 +1,4 @@
-// Sources/SwiftProtobufPluginLibrary/SwiftProtobufNamer.swift - A helper that generates SwiftProtobuf names.
+// Sources/AppleSwiftProtobufPluginLibrary/AppleSwiftProtobufNamer.swift - A helper that generates AppleSwiftProtobuf names.
 //
 // Copyright (c) 2014 - 2017 Apple Inc. and the project authors
 // Licensed under Apache License v2.0 with Runtime Library Exception
@@ -8,13 +8,13 @@
 //
 // -----------------------------------------------------------------------------
 ///
-/// A helper that can generate SwiftProtobuf names from types.
+/// A helper that can generate AppleSwiftProtobuf names from types.
 ///
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobufPluginLibrary
 
-extension SwiftProtobufNamer {
+extension AppleSwiftProtobufNamer {
 
     /// Filters the Enum's values to those that will have unique Swift
     /// names. Only poorly named proto enum alias values get filtered

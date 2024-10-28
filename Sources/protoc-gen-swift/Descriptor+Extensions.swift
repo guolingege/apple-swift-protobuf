@@ -8,11 +8,11 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobufPluginLibrary
 
 extension FileDescriptor {
     var isBundledProto: Bool {
-        SwiftProtobufInfo.isBundledProto(file: self)
+        AppleSwiftProtobufInfo.isBundledProto(file: self)
     }
 
     // Returns true if the file will need to import Foundation.
@@ -66,7 +66,7 @@ extension FileDescriptor {
     // like anyone else would need the logic. Swift GRPC support probably stick
     // with the support for the module mappings.
     func computeImports(
-        namer: SwiftProtobufNamer,
+        namer: AppleSwiftProtobufNamer,
         directive: GeneratorOptions.ImportDirective,
         reexportPublicImports: Bool
     ) -> String {
@@ -89,7 +89,7 @@ extension FileDescriptor {
         let importSnippet = directive.snippet
         var imports = Set<String>()
         for dependency in dependencies {
-            if SwiftProtobufInfo.isBundledProto(file: dependency) {
+            if AppleSwiftProtobufInfo.isBundledProto(file: dependency) {
                 continue  // No import needed for the runtime, that's always added.
             }
             if reexportPublicImports && publicDependencies.contains(where: { $0 === dependency }) {
@@ -129,7 +129,7 @@ extension FileDescriptor {
     }
 
     // Internal helper to `computeImports(...)`.
-    private func computeSymbolReExports(namer: SwiftProtobufNamer, useAccessLevelOnImports: Bool) -> [String] {
+    private func computeSymbolReExports(namer: AppleSwiftProtobufNamer, useAccessLevelOnImports: Bool) -> [String] {
         var result = [String]()
 
         // To handle re-exporting, recursively walk all the `import public` files
@@ -145,7 +145,7 @@ extension FileDescriptor {
             if visited.contains(dependencyName) { continue }
             visited.insert(dependencyName)
 
-            if SwiftProtobufInfo.isBundledProto(file: dependency) {
+            if AppleSwiftProtobufInfo.isBundledProto(file: dependency) {
                 continue  // Bundlined file, nothing to do.
             }
             guard let depModule = namer.mappings.moduleName(forFile: dependency) else {
@@ -303,7 +303,7 @@ extension Descriptor {
 }
 
 extension FieldDescriptor {
-    func swiftType(namer: SwiftProtobufNamer) -> String {
+    func swiftType(namer: AppleSwiftProtobufNamer) -> String {
         if case (let keyField, let valueField)? = messageType?.mapKeyAndValue {
             let keyType = keyField.swiftType(namer: namer)
             let valueType = valueField.swiftType(namer: namer)
@@ -338,7 +338,7 @@ extension FieldDescriptor {
         return result
     }
 
-    func swiftStorageType(namer: SwiftProtobufNamer) -> String {
+    func swiftStorageType(namer: AppleSwiftProtobufNamer) -> String {
         let swiftType = self.swiftType(namer: namer)
         switch label {
         case .repeated:
@@ -380,7 +380,7 @@ extension FieldDescriptor {
         }
     }
 
-    func swiftDefaultValue(namer: SwiftProtobufNamer) -> String {
+    func swiftDefaultValue(namer: AppleSwiftProtobufNamer) -> String {
         if isMap {
             return "[:]"
         }
@@ -433,7 +433,7 @@ extension FieldDescriptor {
 
     /// Calculates the traits type used for maps and extensions, they
     /// are used in decoding and visiting.
-    func traitsType(namer: SwiftProtobufNamer) -> String {
+    func traitsType(namer: AppleSwiftProtobufNamer) -> String {
         if case (let keyField, let valueField)? = messageType?.mapKeyAndValue {
             let keyTraits = keyField.traitsType(namer: namer)
             let valueTraits = valueField.traitsType(namer: namer)

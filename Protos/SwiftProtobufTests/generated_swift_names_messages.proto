@@ -867,8 +867,8 @@ message GeneratedSwiftReservedMessages {
   message subVisitor { int32 subVisitor = 1; }
   message Swift { int32 Swift = 1; }
   message swiftPrefix { int32 swiftPrefix = 1; }
-  message SwiftProtobufContiguousBytes { int32 SwiftProtobufContiguousBytes = 1; }
-  message SwiftProtobufError { int32 SwiftProtobufError = 1; }
+  message AppleSwiftProtobufContiguousBytes { int32 AppleSwiftProtobufContiguousBytes = 1; }
+  message AppleSwiftProtobufError { int32 AppleSwiftProtobufError = 1; }
   message syntax { int32 syntax = 1; }
   message T { int32 T = 1; }
   message tag { int32 tag = 1; }

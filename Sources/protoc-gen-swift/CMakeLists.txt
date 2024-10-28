@@ -19,8 +19,8 @@ add_executable(protoc-gen-swift
   StringUtils.swift
   Version.swift)
 target_link_libraries(protoc-gen-swift PRIVATE
-  SwiftProtobufPluginLibrary
-  SwiftProtobuf)
+  AppleSwiftProtobufPluginLibrary
+  AppleSwiftProtobuf)
 
 
 install(TARGETS protoc-gen-swift

@@ -14,8 +14,8 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 /// Interface for field generators.
 protocol FieldGenerator {

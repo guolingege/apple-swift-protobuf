@@ -19,20 +19,20 @@ let package = Package(
         .target(
             name: "ModuleA",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ]
         ),
         .target(
             name: "ImportsAPublicly",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf"),
                 .target(name: "ModuleA"),
             ]
         ),
         .target(
             name: "ImportsImportsAPublicly",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf"),
                 .target(name: "ImportsAPublicly"),
             ]
         ),

@@ -18,8 +18,8 @@ import sys
 _VERSION_RE = re.compile(r'^(?P<major>\d+)\.(?P<minor>\d+)(.(?P<revision>\d+))?$')
 
 _PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-_PODSPEC_PATH = os.path.join(_PROJECT_ROOT, 'SwiftProtobuf.podspec')
-_VERSION_SWIFT_PATH = os.path.join(_PROJECT_ROOT, 'Sources/SwiftProtobuf/Version.swift')
+_PODSPEC_PATH = os.path.join(_PROJECT_ROOT, 'AppleSwiftProtobuf.podspec')
+_VERSION_SWIFT_PATH = os.path.join(_PROJECT_ROOT, 'Sources/AppleSwiftProtobuf/Version.swift')
 
 def Fail(message):
   sys.stderr.write('Error: %s\n' % message)
@@ -32,14 +32,14 @@ def ExtractVersion(s):
 
 
 def ValidateFiles():
-  # Extra from SwiftProtobuf.podspec
+  # Extra from AppleSwiftProtobuf.podspec
   pod_content = open(_PODSPEC_PATH).read()
   match = re.search(r'version = \'(\d+.\d+.\d+)\'', pod_content)
   if not match:
-    Fail('Failed to extract a version from SwiftProtobuf.podspec')
+    Fail('Failed to extract a version from AppleSwiftProtobuf.podspec')
   (major, minor, revision) = ExtractVersion(match.group(1))
 
-  # Test Sources/SwiftProtobuf/Version.swift
+  # Test Sources/AppleSwiftProtobuf/Version.swift
   version_swift_content = open(_VERSION_SWIFT_PATH).read()
   major_line = 'public static let major = %s\n' % major
   minor_line = 'public static let minor = %s\n' % minor
@@ -48,20 +48,20 @@ def ValidateFiles():
   had_minor = minor_line in version_swift_content
   had_revision = revision_line in version_swift_content
   if not had_major or not had_minor or not had_revision:
-    Fail('Version in Sources/SwiftProtobuf/Version.swift did not match SwiftProtobuf.podspec')
+    Fail('Version in Sources/AppleSwiftProtobuf/Version.swift did not match AppleSwiftProtobuf.podspec')
 
 
 def UpdateFiles(version_string):
   (major, minor, revision) = ExtractVersion(version_string)
 
-  # Update SwiftProtobuf.podspec
+  # Update AppleSwiftProtobuf.podspec
   pod_content = open(_PODSPEC_PATH).read()
   pod_content = re.sub(r'version = \'(\d+\.\d+\.\d+)\'',
                        'version = \'%s.%s.%s\'' % (major, minor, revision),
                        pod_content)
   open(_PODSPEC_PATH, 'w').write(pod_content)
 
-  # Update Sources/SwiftProtobuf/Version.swift
+  # Update Sources/AppleSwiftProtobuf/Version.swift
   version_swift_content = open(_VERSION_SWIFT_PATH).read()
   version_swift_content = re.sub(r'public static let major = \d+\n',
                                  'public static let major = %s\n' % major,

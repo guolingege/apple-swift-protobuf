@@ -20,7 +20,7 @@ When doing a release:
 
 1. Validate the versions numbers
 
-   1. Inspect `Sources/SwiftProtobuf/Version.swift` and ensure the number is what you expect for
+   1. Inspect `Sources/AppleSwiftProtobuf/Version.swift` and ensure the number is what you expect for
       the next release.
 
       Normally we try to bump _main_ to a new revision after each release, so this number may
@@ -43,18 +43,18 @@ When doing a release:
    is _Draft a new release_.
 
    The tag should be `[a.b.c]` where the number *exactly* matches one you examined in
-   `Sources/SwiftProtobuf/Version.swift`.
+   `Sources/AppleSwiftProtobuf/Version.swift`.
 
    For the description call out any major things in that release.  Usually a short summary and
    then a reference to the pull request for more info is enough.
 
-1. Publish the `SwiftProtobuf.podspec`
+1. Publish the `AppleSwiftProtobuf.podspec`
 
       ```
-      pod trunk push SwiftProtobuf.podspec
+      pod trunk push AppleSwiftProtobuf.podspec
       ```
 
-      _Note:_ This uses that local copy of `SwiftProtobuf.podspec`, but checks
+      _Note:_ This uses that local copy of `AppleSwiftProtobuf.podspec`, but checks
       against the sources on github.
 
 1. Bump the version on _main_

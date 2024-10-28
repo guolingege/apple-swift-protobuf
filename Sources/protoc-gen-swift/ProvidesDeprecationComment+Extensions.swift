@@ -9,7 +9,7 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobufPluginLibrary
 
 extension ProvidesSourceCodeLocation {
     func protoSourceComments(

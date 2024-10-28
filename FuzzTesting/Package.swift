@@ -9,32 +9,32 @@ let package = Package(
         .macOS(.v10_15)
     ],
     dependencies: [
-        .package(name: "SwiftProtobuf", path: "..")
+        .package(name: "AppleSwiftProtobuf", path: "..")
     ],
     targets: [
         .target(
             name: "FuzzCommon",
-            dependencies: ["SwiftProtobuf"]
+            dependencies: ["AppleSwiftProtobuf"]
         ),
         .target(
             name: "FuzzBinary",
-            dependencies: ["SwiftProtobuf", "FuzzCommon"]
+            dependencies: ["AppleSwiftProtobuf", "FuzzCommon"]
         ),
         .target(
             name: "FuzzBinaryDelimited",
-            dependencies: ["SwiftProtobuf", "FuzzCommon"]
+            dependencies: ["AppleSwiftProtobuf", "FuzzCommon"]
         ),
         .target(
             name: "FuzzAsyncMessageSequence",
-            dependencies: ["SwiftProtobuf", "FuzzCommon"]
+            dependencies: ["AppleSwiftProtobuf", "FuzzCommon"]
         ),
         .target(
             name: "FuzzJSON",
-            dependencies: ["SwiftProtobuf", "FuzzCommon"]
+            dependencies: ["AppleSwiftProtobuf", "FuzzCommon"]
         ),
         .target(
             name: "FuzzTextFormat",
-            dependencies: ["SwiftProtobuf", "FuzzCommon"]
+            dependencies: ["AppleSwiftProtobuf", "FuzzCommon"]
         ),
         .testTarget(
             name: "FuzzCommonTests",

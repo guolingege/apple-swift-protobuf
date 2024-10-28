@@ -14,8 +14,8 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 extension Range where Bound == Int32 {
 

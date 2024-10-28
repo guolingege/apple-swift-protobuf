@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# SwiftProtobuf/Performance/generators/swift.sh - Swift test harness generator
+# AppleSwiftProtobuf/Performance/generators/swift.sh - Swift test harness generator
 #
 # This source file is part of the Swift.org open source project
 #

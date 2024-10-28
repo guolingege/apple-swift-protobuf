@@ -1,6 +1,6 @@
 # To generate the descriptor set.
 #   ../protobuf/bazel-bin/protoc -o ~/fuzz.bin -I Protos -I Protos/upstream \
-#       SwiftProtobufTests/fuzz_testing.proto
+#       AppleSwiftProtobufTests/fuzz_testing.proto
 
 # Collect the json_names and make them keys:
 #   cat ~/fuzz.bin \

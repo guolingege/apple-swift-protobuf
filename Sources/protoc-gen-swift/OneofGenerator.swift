@@ -13,8 +13,8 @@
 ///
 // -----------------------------------------------------------------------------
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 class OneofGenerator {
     /// Custom FieldGenerator that caches come calculated strings, and bridges
@@ -42,7 +42,7 @@ class OneofGenerator {
         // Only valid on message fields.
         var messageType: Descriptor? { fieldDescriptor.messageType }
 
-        init(descriptor: FieldDescriptor, generatorOptions: GeneratorOptions, namer: SwiftProtobufNamer) {
+        init(descriptor: FieldDescriptor, generatorOptions: GeneratorOptions, namer: AppleSwiftProtobufNamer) {
             precondition(descriptor.oneofIndex != nil)
 
             // Set after creation.
@@ -110,7 +110,7 @@ class OneofGenerator {
 
     private let oneofDescriptor: OneofDescriptor
     private let generatorOptions: GeneratorOptions
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
     private let usesHeapStorage: Bool
 
     private let fields: [MemberFieldGenerator]
@@ -128,7 +128,7 @@ class OneofGenerator {
     init(
         descriptor: OneofDescriptor,
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer,
+        namer: AppleSwiftProtobufNamer,
         usesHeapStorage: Bool
     ) {
         self.oneofDescriptor = descriptor

@@ -4,14 +4,14 @@ Google's protobuf project includes an extensive "conformance test suite"
 that exercises various encoding and decoding features of protobuf
 implementations to help ensure that they are all interoperable.
 
-SwiftProtobuf currently passes Google's entire conformance test suite.
-We have integrated the conformance test with the SwiftProtobuf test
+AppleSwiftProtobuf currently passes Google's entire conformance test suite.
+We have integrated the conformance test with the AppleSwiftProtobuf test
 suite to help ensure that we remain conformant in the future as well.
 
 If you have Google's protobuf source code on your system, then a
 simple environment variable setting will run the conformance test
 as part of every `make test.`
-We strongly recommend anyone making changes to SwiftProtobuf run
+We strongly recommend anyone making changes to AppleSwiftProtobuf run
 these tests regularly.
 
 ## Preparation
@@ -32,7 +32,7 @@ the following should suffice:
 ```console
 make test
 ```
-This will build and run the SwiftProtobuf test suite,
+This will build and run the AppleSwiftProtobuf test suite,
 verify the code generator, and finally run the conformance tests.
 
 You can also run the conformance tests by themselves:
@@ -42,7 +42,7 @@ make test-conformance
 
 ## Test Environment
 
-The `Makefile` at the root of the SwiftProtobuf project has the
+The `Makefile` at the root of the AppleSwiftProtobuf project has the
 following lines, which specify how to run the installed `protoc`
 program on your system, and where to find the Google protobuf source
 tree:

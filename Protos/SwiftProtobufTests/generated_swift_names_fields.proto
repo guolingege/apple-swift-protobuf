@@ -867,8 +867,8 @@ message GeneratedSwiftReservedFields {
   int32 subVisitor = 861;
   int32 Swift = 862;
   int32 swiftPrefix = 863;
-  int32 SwiftProtobufContiguousBytes = 864;
-  int32 SwiftProtobufError = 865;
+  int32 AppleSwiftProtobufContiguousBytes = 864;
+  int32 AppleSwiftProtobufError = 865;
   int32 syntax = 866;
   int32 T = 867;
   int32 tag = 868;

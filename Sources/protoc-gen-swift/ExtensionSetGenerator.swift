@@ -15,8 +15,8 @@
 ///
 // -----------------------------------------------------------------------------
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 /// Provides the generation for extensions in a file.
 class ExtensionSetGenerator {
@@ -25,7 +25,7 @@ class ExtensionSetGenerator {
     private class ExtensionGenerator {
         let fieldDescriptor: FieldDescriptor
         let generatorOptions: GeneratorOptions
-        let namer: SwiftProtobufNamer
+        let namer: AppleSwiftProtobufNamer
 
         let comments: String
         let containingTypeSwiftFullName: String
@@ -50,7 +50,7 @@ class ExtensionSetGenerator {
             return "\(namer.swiftProtobufModulePrefix)\(label)\(modifier)ExtensionField"
         }
 
-        init(descriptor: FieldDescriptor, generatorOptions: GeneratorOptions, namer: SwiftProtobufNamer) {
+        init(descriptor: FieldDescriptor, generatorOptions: GeneratorOptions, namer: AppleSwiftProtobufNamer) {
             self.fieldDescriptor = descriptor
             self.generatorOptions = generatorOptions
             self.namer = namer
@@ -126,7 +126,7 @@ class ExtensionSetGenerator {
 
     private let fileDescriptor: FileDescriptor
     private let generatorOptions: GeneratorOptions
-    private let namer: SwiftProtobufNamer
+    private let namer: AppleSwiftProtobufNamer
 
     // The order of these is as they are created, so it keeps them grouped by
     // where they were declared.
@@ -137,7 +137,7 @@ class ExtensionSetGenerator {
     init(
         fileDescriptor: FileDescriptor,
         generatorOptions: GeneratorOptions,
-        namer: SwiftProtobufNamer
+        namer: AppleSwiftProtobufNamer
     ) {
         self.fileDescriptor = fileDescriptor
         self.generatorOptions = generatorOptions
@@ -223,10 +223,10 @@ class ExtensionSetGenerator {
 
             // MARK: - File's ExtensionMap: \(filePrefix)\(filenameAsIdentifier)_Extensions
 
-            /// A `SwiftProtobuf.SimpleExtensionMap` that includes all of the extensions defined by
-            /// this .proto file. It can be used any place an `SwiftProtobuf.ExtensionMap` is needed
-            /// in parsing, or it can be combined with other `SwiftProtobuf.SimpleExtensionMap`s to create
-            /// a larger `SwiftProtobuf.SimpleExtensionMap`.
+            /// A `AppleSwiftProtobuf.SimpleExtensionMap` that includes all of the extensions defined by
+            /// this .proto file. It can be used any place an `AppleSwiftProtobuf.ExtensionMap` is needed
+            /// in parsing, or it can be combined with other `AppleSwiftProtobuf.SimpleExtensionMap`s to create
+            /// a larger `AppleSwiftProtobuf.SimpleExtensionMap`.
             \(generatorOptions.visibilitySourceSnippet)let \(filePrefix)\(filenameAsIdentifier)_Extensions: \(namer.swiftProtobufModulePrefix)SimpleExtensionMap = [
             """
         )

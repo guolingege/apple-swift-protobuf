@@ -8,7 +8,7 @@
 //
 // -----------------------------------------------------------------------------
 
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobufPluginLibrary
 
 class GeneratorOptions {
     enum OutputNaming {
@@ -106,7 +106,7 @@ class GeneratorOptions {
                         value: pair.value
                     )
                 }
-            case "SwiftProtobufModuleName":
+            case "AppleSwiftProtobufModuleName":
                 // This option is not documented in PLUGIN.md, because it's a feature
                 // that would ordinarily not be required for a given adopter.
                 if isValidSwiftIdentifier(pair.value) {

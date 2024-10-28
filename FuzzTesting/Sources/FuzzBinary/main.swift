@@ -7,7 +7,7 @@
 // -----------------------------------------------------------------------------
 
 import FuzzCommon
-import SwiftProtobuf
+import AppleSwiftProtobuf
 
 @_cdecl("LLVMFuzzerTestOneInput")
 public func FuzzBinary(_ start: UnsafeRawPointer, _ count: Int) -> CInt {

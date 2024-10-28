@@ -20,7 +20,7 @@ let package = Package(
         .executableTarget(
             name: "InternalImportsByDefault",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ],
             exclude: [
                 "Protos/SomeProtoWithBytes.proto",
@@ -34,7 +34,7 @@ let package = Package(
                 .unsafeFlags(["-warnings-as-errors"]),
             ],
             plugins: [
-                .plugin(name: "SwiftProtobufPlugin", package: "swift-protobuf")
+                .plugin(name: "AppleSwiftProtobufPlugin", package: "swift-protobuf")
             ]
         )
     ]

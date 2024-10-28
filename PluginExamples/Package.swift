@@ -27,28 +27,28 @@ private func targets() -> [Target] {
         .target(
             name: "Simple",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ],
             plugins: [
-                .plugin(name: "SwiftProtobufPlugin", package: "swift-protobuf")
+                .plugin(name: "AppleSwiftProtobufPlugin", package: "swift-protobuf")
             ]
         ),
         .target(
             name: "Nested",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ],
             plugins: [
-                .plugin(name: "SwiftProtobufPlugin", package: "swift-protobuf")
+                .plugin(name: "AppleSwiftProtobufPlugin", package: "swift-protobuf")
             ]
         ),
         .target(
             name: "Import",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ],
             plugins: [
-                .plugin(name: "SwiftProtobufPlugin", package: "swift-protobuf")
+                .plugin(name: "AppleSwiftProtobufPlugin", package: "swift-protobuf")
             ]
         ),
     ]
@@ -57,13 +57,13 @@ private func targets() -> [Target] {
         .target(
             name: "AccessLevelOnImport",
             dependencies: [
-                .product(name: "SwiftProtobuf", package: "swift-protobuf")
+                .product(name: "AppleSwiftProtobuf", package: "swift-protobuf")
             ],
             swiftSettings: [
                 .enableExperimentalFeature("AccessLevelOnImport")
             ],
             plugins: [
-                .plugin(name: "SwiftProtobufPlugin", package: "swift-protobuf")
+                .plugin(name: "AppleSwiftProtobufPlugin", package: "swift-protobuf")
             ]
         )
     )

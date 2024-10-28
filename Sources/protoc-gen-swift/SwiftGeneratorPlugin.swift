@@ -17,17 +17,17 @@
 // -----------------------------------------------------------------------------
 
 import Foundation
-import SwiftProtobuf
-import SwiftProtobufPluginLibrary
+import AppleSwiftProtobuf
+import AppleSwiftProtobufPluginLibrary
 
 @main
 struct SwiftGeneratorPlugin: CodeGenerator {
 
     func generate(
-        files: [SwiftProtobufPluginLibrary.FileDescriptor],
+        files: [AppleSwiftProtobufPluginLibrary.FileDescriptor],
         parameter: any CodeGeneratorParameter,
-        protoCompilerContext: any SwiftProtobufPluginLibrary.ProtoCompilerContext,
-        generatorOutputs: any SwiftProtobufPluginLibrary.GeneratorOutputs
+        protoCompilerContext: any AppleSwiftProtobufPluginLibrary.ProtoCompilerContext,
+        generatorOutputs: any AppleSwiftProtobufPluginLibrary.GeneratorOutputs
     ) throws {
         let options = try GeneratorOptions(parameter: parameter)
 
@@ -46,7 +46,7 @@ struct SwiftGeneratorPlugin: CodeGenerator {
         }
     }
 
-    var supportedFeatures: [SwiftProtobufPluginLibrary.Google_Protobuf_Compiler_CodeGeneratorResponse.Feature] = [
+    var supportedFeatures: [AppleSwiftProtobufPluginLibrary.Google_Protobuf_Compiler_CodeGeneratorResponse.Feature] = [
         .proto3Optional, .supportsEditions,
     ]
 
@@ -54,11 +54,11 @@ struct SwiftGeneratorPlugin: CodeGenerator {
         Google_Protobuf_Edition.proto2...Google_Protobuf_Edition.edition2023
     }
 
-    var version: String? { "\(SwiftProtobuf.Version.versionString)" }
+    var version: String? { "\(AppleSwiftProtobuf.Version.versionString)" }
     var copyrightLine: String? { "\(Version.copyright)" }
     var projectURL: String? { "https://github.com/apple/swift-protobuf" }
 
-    private func auditProtoCVersion(context: any SwiftProtobufPluginLibrary.ProtoCompilerContext) {
+    private func auditProtoCVersion(context: any AppleSwiftProtobufPluginLibrary.ProtoCompilerContext) {
         guard context.version != nil else {
             Stderr.print("WARNING: unknown version of protoc, use 3.2.x or later to ensure JSON support is correct.")
             return
@@ -86,14 +86,14 @@ struct SwiftGeneratorPlugin: CodeGenerator {
             In particular, if you have renamed this program, you will need to
             adjust the protoc command-line option accordingly.
 
-            The generated Swift output requires the SwiftProtobuf \(version!)
+            The generated Swift output requires the AppleSwiftProtobuf \(version!)
             library be included in your project.
 
             If you use `swift build` to compile your project, add this to
             Package.swift:
 
                dependencies: [
-                 .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "\(version!)"),
+                 .package(name: "AppleSwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "\(version!)"),
                ]
 
             Usage: \(CommandLine.programName) [options] [filename...]
