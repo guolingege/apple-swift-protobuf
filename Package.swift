@@ -34,6 +34,7 @@ let package = Package(
     targets: [
         .target(
             name: "AppleSwiftProtobuf",
+            path: "Sources/AppleSwiftProtobuf",
             exclude: ["CMakeLists.txt"],
             resources: [.copy("PrivacyInfo.xcprivacy")],
             swiftSettings: .packageSettings
@@ -41,6 +42,7 @@ let package = Package(
         .target(
             name: "AppleSwiftProtobufPluginLibrary",
             dependencies: ["AppleSwiftProtobuf"],
+            path: "Sources/AppleSwiftProtobufPluginLibrary",
             exclude: ["CMakeLists.txt"],
             resources: [.copy("PrivacyInfo.xcprivacy")],
             swiftSettings: .packageSettings
@@ -48,17 +50,20 @@ let package = Package(
         .target(
             name: "AppleSwiftProtobufTestHelpers",
             dependencies: ["AppleSwiftProtobuf"],
+            path: "Sources/AppleSwiftProtobufTestHelpers",
             swiftSettings: .packageSettings
         ),
         .executableTarget(
             name: "protoc-gen-swift",
             dependencies: ["AppleSwiftProtobufPluginLibrary", "AppleSwiftProtobuf"],
+            path: "Sources/protoc-gen-swift",
             exclude: ["CMakeLists.txt"],
             swiftSettings: .packageSettings
         ),
         .executableTarget(
             name: "Conformance",
             dependencies: ["AppleSwiftProtobuf"],
+            path: "Sources/Conformance",
             exclude: ["failure_list_swift.txt", "text_format_failure_list_swift.txt"],
             swiftSettings: .packageSettings
         ),
